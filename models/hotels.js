@@ -11,7 +11,7 @@ const HotelSchema = new Schema({
     type: String,
     required: true
   },
-  beds: {
+  rooms: {
     type: Number,
     required: true
   },

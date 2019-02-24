@@ -30,7 +30,7 @@ router.post("/", (req, res) => {
   const newHotel = new Hotel({
     name: req.body.name,
     img: req.body.img,
-    beds: req.body.beds,
+    rooms: req.body.rooms,
     price: req.body.price,
     city: req.body.city
   });
