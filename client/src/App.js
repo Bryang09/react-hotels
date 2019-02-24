@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+import { results } from "./request";
 
 class App extends Component {
   render() {
+    console.log(results);
     return (
       <div className="App">
         <header className="App-header">
