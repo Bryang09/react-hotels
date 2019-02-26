@@ -2,7 +2,12 @@ import React, { Component } from "react";
 
 import { results } from "../../request";
 import axios from "axios";
+
 import Hero from "./Hero/Hero";
+import Img from "./Hero/Img/Img";
+import Form from "./Hero/Form/Form";
+
+import "./Landing.scss";
 
 class Landing extends Component {
   state = {
@@ -21,8 +26,9 @@ class Landing extends Component {
     console.log(this.state.results);
 
     return (
-      <div>
-        <Hero />
+      <div className="Landing">
+        <Img />
+        <Form />
       </div>
     );
   }
