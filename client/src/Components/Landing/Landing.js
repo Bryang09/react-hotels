@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 
-import { results } from "../../request";
-import axios from "axios";
-
-import Hero from "./Hero/Hero";
 import Img from "./Hero/Img/Img";
 import Form from "./Hero/Form/Form";
 
@@ -11,18 +7,10 @@ import "./Landing.scss";
 
 class Landing extends Component {
   state = {
-    results: [],
     city: "",
     rooms: "",
     name: "",
     email: ""
-  };
-
-  componentWillMount = () => {
-    axios
-      .get(results)
-      .then(res => this.setState({ results: res.data }))
-      .catch(err => console.log(err));
   };
 
   onCity = e => {
@@ -46,7 +34,7 @@ class Landing extends Component {
   };
 
   render() {
-    const { results, city, rooms, name, email } = this.state;
+    const { results, city, rooms, name } = this.state;
 
     const check =
       this.state.name.length > 0 &&
@@ -62,7 +50,7 @@ class Landing extends Component {
     // console.log(this.state.email);
     console.log(check);
 
-    const cityOptions = ["Houston", "Dallas", "Austin"];
+    const cityOptions = ["Houston,TX", "Dallas,TX", "Austin,TX"];
     const roomOptions = [1, 2, 3, 4, 5];
 
     return (
@@ -76,6 +64,9 @@ class Landing extends Component {
           nameChange={this.onName}
           emailChange={this.onEmail}
           disable={check}
+          city={city}
+          rooms={rooms}
+          name={name}
         />
       </div>
     );
