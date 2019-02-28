@@ -25,6 +25,8 @@ router.get("/:id", (req, res) => {
     .catch(err => console.log(err));
 });
 
+// UPDATE
+
 // POST ITEM
 router.post("/", (req, res) => {
   const newHotel = new Hotel({
