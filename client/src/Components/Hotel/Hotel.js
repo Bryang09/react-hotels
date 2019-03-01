@@ -3,11 +3,16 @@ import React, { Component } from "react";
 import axios from "axios";
 import { results } from "../../request";
 
+import Hero from "./Hero/Hero";
+
+import "./Hotel.scss";
+
 import Nav from "../Nav/Nav";
 
 class Hotel extends Component {
   state = {
-    hotel: []
+    hotel: [],
+    fullScreen: true
   };
 
   componentWillMount = () => {
@@ -18,17 +23,66 @@ class Hotel extends Component {
       .catch(err => console.log(err));
   };
 
+  onInterested = () => {
+    this.setState({ fullScreen: !this.state.fullScreen });
+  };
+
   render() {
-    const { hotel } = this.state;
+    const { hotel, fullScreen } = this.state;
     console.log(hotel);
+    console.log(fullScreen);
 
     return (
       <div className="Hotel">
         <Nav />
-        {/* <h1>Hotel</h1> */}
-        <div className="HotelContainer">
-          <div className="img" />
-          <div className="info" />
+        <Hero
+          hotel={hotel}
+          fullScreen={fullScreen}
+          interested={this.onInterested}
+        />
+        {/* <div
+          className="HotelContainer"
+          style={
+            fullScreen
+              ? {
+                  background: `linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0.6)),url(${
+                    hotel.img
+                  }) no-repeat center center / cover`,
+                  height: "100vh"
+                }
+              : {
+                  background: `linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0.6)),url(${
+                    hotel.img
+                  }) no-repeat center center / cover`,
+                  height: "50vh"
+                }
+          }
+        >
+          <Nav />
+
+          <div className="info">
+            <h1>{hotel.name}</h1>
+            <div className="description">
+              <div className="row">
+                <h3>
+                  $ <span>{hotel.price}</span>/ night
+                </h3>
+                <h3>
+                  <span>{hotel.rooms} </span>rooms available
+                </h3>
+              </div>
+              <h4>{hotel.city}</h4>
+
+              <h2 onClick={this.onInterested}>Im Interested!</h2>
+            </div>
+          </div>
+        </div> */}
+
+        <div
+          className="Reservation"
+          style={fullScreen ? { display: "none" } : { display: "flex" }}
+        >
+          <h2>Reserve Your Room</h2>
         </div>
       </div>
     );

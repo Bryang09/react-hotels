@@ -1,0 +1,67 @@
+.Hotel {
+  height: 100%;
+  overflow: hidden;
+}
+
+.HotelContainer {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease;
+
+  .info {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    h1 {
+      color: #fff;
+      font-size: 48px;
+    }
+
+    .description {
+      width: 100%;
+
+      .row {
+        color: #fff;
+        display: flex;
+        width: 100%;
+
+        h3 {
+          font-size: 26px;
+          width: 50%;
+          text-align: center;
+          border-bottom: 1px solid #00ffe9;
+        }
+
+        span {
+          color: #00ffe9;
+        }
+      }
+
+      h4 {
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 400;
+        border-bottom: 1px solid #00ffe9;
+      }
+
+      h2 {
+        text-align: center;
+        border: 1px solid #fff;
+        width: 30%;
+        margin: 8vh auto;
+        color: #fff;
+        cursor: pointer;
+        padding: 2vh 2vw;
+      }
+    }
+  }
+}

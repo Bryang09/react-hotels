@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 import { results } from "../../request";
 import axios from "axios";
@@ -7,6 +6,7 @@ import axios from "axios";
 import "./Results.scss";
 
 import Container from "./Container/Container";
+import Nav from "../Nav/Nav";
 
 class Results extends Component {
   state = {
@@ -31,13 +31,12 @@ class Results extends Component {
 
     return (
       <div className="Results">
+        <Nav />
         <div className="banner">
-          <Link to="/">
-            <h1>
-              Searching For <span>{rooms}</span> Bedroom Hotels in{" "}
-              <span>{city}</span>
-            </h1>
-          </Link>
+          <h1>
+            Searching For <span>{rooms}</span> Bedroom Hotels in{" "}
+            <span>{city}</span>
+          </h1>
         </div>
         <Container results={results} city={city} rooms={rooms} />
       </div>
