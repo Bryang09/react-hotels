@@ -55,8 +55,8 @@
       }
 
       .unavailable {
-        pointer-events: none;
         cursor: not-allowed;
+        pointer-events: none;
         background: rgba(0, 0, 0, 0.5);
         transition: 1s ease;
       }

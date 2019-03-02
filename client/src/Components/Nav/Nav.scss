@@ -1,10 +1,15 @@
 .Nav {
   width: 10vw;
   height: 10vh;
-  background: #fff;
+  background: rgba(0, 0, 0, 0);
   position: fixed;
   top: 0;
   left: 0;
+  transition: 1s ease;
+
+  &:hover {
+    background: #00e6d2;
+  }
 
   .box {
     width: 100%;
@@ -16,7 +21,7 @@
   }
 
   i {
-    color: #333;
+    color: #fff;
     font-size: 35px;
   }
 }
