@@ -27,7 +27,7 @@ const Result = props => {
           </h4>
           <h5>{city}</h5>
           <Link
-            to={`/hotel/${id}`}
+            to={`/hotel/${id}/${roomsNeeded}`}
             className={rooms >= roomsNeeded ? "available" : "unavailable"}
           >
             <h5 id="btn">Book Now!</h5>

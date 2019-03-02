@@ -14,7 +14,9 @@ const Reservation = props => {
     selectedTo,
     to,
     onFrom,
-    onTo
+    onTo,
+    reserve,
+    fail
   } = props;
   return (
     <div
@@ -42,9 +44,24 @@ const Reservation = props => {
         </MuiThemeProvider>
       </div>
 
-      <h3 className={from !== "" && to !== "" ? "able" : "disable"}>
+      <h3
+        className={from !== "" && to !== "" ? "able" : "disable"}
+        onClick={reserve}
+      >
         Book Now!
       </h3>
+      <h4 style={fail ? { display: "flex" } : { display: "none" }}>
+        Rooms Requested Exceed Rooms Available
+        <br />
+        Please Search for A different Hotel
+      </h4>
+      <h4
+        id="success"
+        style={fail === false ? { display: "flex" } : { display: "none" }}
+      >
+        You will Recieve an Email with Your Comfirmation Number. <br />
+        Thank You For Choosing Bryan's Hotels
+      </h4>
     </div>
   );
 };

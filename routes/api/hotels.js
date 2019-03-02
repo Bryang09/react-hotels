@@ -27,6 +27,19 @@ router.get("/:id", (req, res) => {
 
 // UPDATE
 
+router.put("/:id", (req, res) => {
+  const id = req.params.id;
+  Hotel.findById(id, (err, hotel) => {
+    console.log(hotel.rooms);
+
+    hotel.rooms = req.body.rooms;
+    hotel
+      .save()
+      .then(hotel => res.json(hotel))
+      .catch(err => console.log(err));
+  });
+});
+
 // POST ITEM
 router.post("/", (req, res) => {
   const newHotel = new Hotel({
