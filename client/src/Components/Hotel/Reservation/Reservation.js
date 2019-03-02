@@ -4,6 +4,8 @@ import { InlineDatePicker, MuiPickersUtilsProvider } from "material-ui-pickers";
 import DateFnsUtils from "@date-io/date-fns";
 import { MuiThemeProvider } from "@material-ui/core";
 
+import { Link } from "react-router-dom";
+
 import theme from "./theme";
 
 const Reservation = props => {
@@ -55,13 +57,15 @@ const Reservation = props => {
         <br />
         Please Search for A different Hotel
       </h4>
-      <h4
-        id="success"
-        style={fail === false ? { display: "flex" } : { display: "none" }}
-      >
-        You will Recieve an Email with Your Comfirmation Number. <br />
-        Thank You For Choosing Bryan's Hotels
-      </h4>
+      <Link to="/">
+        <h4
+          id="success"
+          style={fail === false ? { display: "flex" } : { display: "none" }}
+        >
+          You will Recieve an Email with Your Comfirmation Number. <br />
+          Thank You For Choosing Bryan's Hotels
+        </h4>
+      </Link>
     </div>
   );
 };

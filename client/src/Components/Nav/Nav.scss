@@ -1,7 +1,7 @@
 .Nav {
   width: 10vw;
   height: 10vh;
-  background: #18365d;
+  background: #fff;
   position: fixed;
   top: 0;
   left: 0;
@@ -16,14 +16,7 @@
   }
 
   i {
-    color: #fff;
+    color: #333;
     font-size: 35px;
-  }
-
-  .navLine {
-    height: 5px;
-    width: 25px;
-    border: none;
-    border-bottom: 3px solid #fff;
   }
 }

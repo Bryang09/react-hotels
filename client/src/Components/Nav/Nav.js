@@ -4,14 +4,14 @@ import "./Nav.scss";
 
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = props => {
   return (
     <div className="Nav">
-      <div className="box">
-        <Link to="/">
+      <Link to="/">
+        <div className="box">
           <i className="fas fa-home" />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 };
