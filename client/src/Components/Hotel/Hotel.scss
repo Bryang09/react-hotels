@@ -65,3 +65,48 @@
     }
   }
 }
+
+.Reservation {
+  height: 50vh;
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 35px;
+  }
+
+  .picker {
+    display: flex;
+    width: 60%;
+    margin: 5vh auto;
+
+    .datePicker {
+      width: 48%;
+      margin: 2vh 1vw;
+    }
+  }
+
+  h3 {
+    padding: 1vh 2vw;
+    color: #fff;
+  }
+}
+
+.disable {
+  pointer-events: none;
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.able {
+  background: linear-gradient(90deg, #f10fc0ba, #624994);
+  box-shadow: 0px 0px 35px 0px #f10fc0ba;
+
+  &:hover {
+    box-shadow: none;
+  }
+}

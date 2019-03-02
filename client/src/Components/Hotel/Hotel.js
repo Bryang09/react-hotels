@@ -1,18 +1,21 @@
 import React, { Component } from "react";
+import "./Hotel.scss";
 
 import axios from "axios";
 import { results } from "../../request";
 
 import Hero from "./Hero/Hero";
-
-import "./Hotel.scss";
-
 import Nav from "../Nav/Nav";
+import Reservation from "./Reservation/Reservation";
 
 class Hotel extends Component {
   state = {
     hotel: [],
-    fullScreen: true
+    fullScreen: true,
+    selectedFrom: new Date(),
+    selectedTo: new Date(),
+    from: "",
+    to: ""
   };
 
   componentWillMount = () => {
@@ -27,10 +30,30 @@ class Hotel extends Component {
     this.setState({ fullScreen: !this.state.fullScreen });
   };
 
+  onFrom = e => {
+    this.setState({ from: e, selectedFrom: e });
+  };
+
+  onTo = e => {
+    this.setState({ to: e, selectedTo: e });
+  };
+
   render() {
-    const { hotel, fullScreen } = this.state;
+    const {
+      hotel,
+      fullScreen,
+      from,
+      to,
+      selectedFrom,
+      selectedTo
+    } = this.state;
+
     console.log(hotel);
     console.log(fullScreen);
+    console.log(from);
+    console.log(to);
+    console.log(selectedFrom);
+    console.log(selectedTo);
 
     return (
       <div className="Hotel">
@@ -40,50 +63,44 @@ class Hotel extends Component {
           fullScreen={fullScreen}
           interested={this.onInterested}
         />
+        <Reservation
+          fullScreen={fullScreen}
+          selectedFrom={selectedFrom}
+          onFrom={this.onFrom}
+          selectedTo={selectedTo}
+          onTo={this.onTo}
+          from={from}
+          to={to}
+        />
         {/* <div
-          className="HotelContainer"
-          style={
-            fullScreen
-              ? {
-                  background: `linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0.6)),url(${
-                    hotel.img
-                  }) no-repeat center center / cover`,
-                  height: "100vh"
-                }
-              : {
-                  background: `linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0.6)),url(${
-                    hotel.img
-                  }) no-repeat center center / cover`,
-                  height: "50vh"
-                }
-          }
-        >
-          <Nav />
-
-          <div className="info">
-            <h1>{hotel.name}</h1>
-            <div className="description">
-              <div className="row">
-                <h3>
-                  $ <span>{hotel.price}</span>/ night
-                </h3>
-                <h3>
-                  <span>{hotel.rooms} </span>rooms available
-                </h3>
-              </div>
-              <h4>{hotel.city}</h4>
-
-              <h2 onClick={this.onInterested}>Im Interested!</h2>
-            </div>
-          </div>
-        </div> */}
-
-        <div
           className="Reservation"
           style={fullScreen ? { display: "none" } : { display: "flex" }}
         >
           <h2>Reserve Your Room</h2>
-        </div>
+
+          <div className="picker">
+            <MuiThemeProvider theme={theme}>
+              <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <InlineDatePicker
+                  className="datePicker"
+                  label="From"
+                  value={selectedFrom}
+                  onChange={this.onFrom}
+                />
+                <InlineDatePicker
+                  className="datePicker"
+                  label="To"
+                  value={selectedTo}
+                  onChange={this.onTo}
+                />
+              </MuiPickersUtilsProvider>
+            </MuiThemeProvider>
+          </div>
+
+          <h3 className={from !== "" && to !== "" ? "able" : "disable"}>
+            Book Now!
+          </h3>
+        </div> */}
       </div>
     );
   }
