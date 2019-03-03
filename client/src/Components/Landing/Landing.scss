@@ -1,5 +1,7 @@
 .Landing {
   display: flex;
+  overflow: hidden;
+  overflow-y: hidden;
 }
 
 @media screen and (max-width: 1025px) and (min-aspect-ratio: 4/3) {

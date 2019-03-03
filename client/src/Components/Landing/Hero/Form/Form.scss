@@ -77,16 +77,6 @@ select {
   }
 }
 
-@media screen and (max-width: 1025px) and (min-aspect-ratio: 4/3) {
-  //IPAD
-}
-
-@media screen and (max-width: 1023px) and (min-aspect-ratio: 4/3) {
-}
-
-@media screen and (max-width: 700px) and (min-aspect-ratio: 4/3) {
-}
-
 @media screen and (max-width: 1192px) {
   .Form {
     h1 {
@@ -116,7 +106,45 @@ select {
 @media screen and (max-width: 600px) {
 }
 @media screen and (max-width: 500px) {
+  .Form {
+    h1 {
+      font-size: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 400px) {
+  .Form {
+    h1 {
+      font-size: 18px;
+    }
+
+    a h5 {
+      font-size: 16px;
+      margin-bottom: 1vh;
+    }
+  }
+  select {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1025px) and (min-aspect-ratio: 4/3) {
+  //IPAD
+  .Form {
+    height: 100vh;
+
+    form .input {
+      input,
+      select {
+        margin: 2.5vh 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-aspect-ratio: 4/3) {
+}
+
+@media screen and (max-width: 700px) and (min-aspect-ratio: 4/3) {
 }
