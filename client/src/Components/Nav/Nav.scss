@@ -3,9 +3,10 @@
   height: 10vh;
   background: rgba(0, 0, 0, 0);
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0vh;
+  left: 0vw;
   transition: 1s ease;
+  z-index: 5;
 
   &:hover {
     background: #00e6d2;
@@ -24,4 +25,40 @@
     color: #fff;
     font-size: 35px;
   }
+}
+
+@media screen and (max-width: 1192px) {
+  .Nav {
+    background: #00e6d2;
+    width: 15vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 600px) {
+  .Nav {
+    width: 20vw;
+
+    i {
+      font-size: 25px;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 400px) {
+}
+
+@media screen and (max-width: 1025px) and (min-aspect-ratio: 4/3) {
+  //IPAD
+}
+
+@media screen and (max-width: 1023px) and (min-aspect-ratio: 4/3) {
+}
+
+@media screen and (max-width: 700px) and (min-aspect-ratio: 4/3) {
 }
