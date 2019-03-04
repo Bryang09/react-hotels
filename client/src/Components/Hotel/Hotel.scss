@@ -23,6 +23,7 @@
     h1 {
       color: #fff;
       font-size: 48px;
+      font-weight: 400;
     }
 
     .description {
@@ -38,6 +39,7 @@
           width: 50%;
           text-align: center;
           border-bottom: 1px solid #00ffe9;
+          font-weight: 300;
         }
 
         span {
@@ -63,6 +65,7 @@
         padding: 2vh 2vw;
         background: darken(#00ffe9, 5%);
         transition: 1s ease;
+        font-weight: 400;
 
         &:hover {
           background: darken(#00ffe9, 10%);
@@ -104,7 +107,6 @@
   h4 {
     font-weight: 400;
     padding: 1vh 2vw;
-    background: #ff5d5d;
     color: #fff;
     text-align: center;
     animation: alert 1s ease;
@@ -141,4 +143,144 @@
 
 #success {
   background: #5dd87e;
+}
+
+@media screen and (max-width: 1192px) {
+  .HotelContainer {
+    .info {
+      .description {
+        h2 {
+          padding: 1vh 1vw;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .HotelContainer {
+    .info {
+      width: 80vw;
+    }
+  }
+  .Reservation {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .HotelContainer {
+    .info {
+      .description {
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .HotelContainer {
+    .info {
+      width: 90vw;
+      h1 {
+        font-size: 35px;
+      }
+      .description {
+        .row {
+          h3 {
+            font-size: 18px;
+            padding: 1vh 0;
+          }
+        }
+        h4 {
+          font-size: 18px;
+          margin: 1vh 0;
+        }
+        h2 {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  .Reservation {
+    height: 100%;
+    h2 {
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .picker {
+      height: 100%;
+      flex-direction: column;
+      margin: 0;
+
+      .datePicker {
+        height: 8vh;
+        width: 100%;
+      }
+    }
+    h3 {
+      font-weight: 400;
+    }
+  }
+
+  #succes {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .HotelContainer {
+    .info {
+      h1 {
+        font-size: 28px;
+        margin-bottom: 5px;
+      }
+      .description {
+        .row {
+          h3 {
+            font-size: 14px;
+          }
+        }
+        h4 {
+          font-size: 14px;
+        }
+        h2 {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-aspect-ratio: 4/3) {
+  //IPAD
+  .Reservation {
+    .picker {
+      .datePicker {
+        height: 10vh;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-aspect-ratio: 4/3) {
+  .HotelContainer {
+    height: 100vh !important;
+
+    .info {
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .Reservation {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) and (min-aspect-ratio: 4/3) {
 }
