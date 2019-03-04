@@ -1,0 +1,39 @@
+.react-fancybox {
+  width: 100%;
+  height: 100%;
+
+  .thumbnail {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-width: 50vw;
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    max-height: 285px;
+    min-height: 285px;
+  }
+
+  .react-fancybox {
+    .box {
+      .image-box {
+        width: 50vw;
+      }
+    }
+    img.close-btn {
+      min-width: 25px;
+      min-height: 25px;
+    }
+  }
+}

@@ -2,13 +2,26 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import ReactFancyBox from "react-fancybox";
+import "react-fancybox/lib/fancybox.css";
+
+import "./Result.scss";
+
 const Result = props => {
   console.log(props);
 
   const { name, city, price, rooms, img, id, roomsNeeded } = props;
   return (
     <div className="Result">
-      <div className="img" style={{ backgroundImage: `url(${img})` }} />
+      <div className="img">
+        <ReactFancyBox
+          className="img"
+          thumbnail={`${img}`}
+          image={`${img}`}
+          caption={`${name}`}
+        />
+      </div>
+
       <div className="infoContainer">
         <div className="info">
           <h3>{name}</h3>

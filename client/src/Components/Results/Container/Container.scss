@@ -1,5 +1,5 @@
 .Container {
-  width: 100vw;
+  width: 97vw;
   // background: #333;
   min-height: 70vh;
   display: flex;
@@ -9,7 +9,7 @@
   flex-wrap: wrap;
 
   .Result {
-    width: 45%;
+    width: 47%;
     height: 30vh;
     margin: 2vh 1.5%;
     background: #eee;
@@ -18,14 +18,8 @@
 
     .img {
       height: 100%;
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       width: 50%;
+      cursor: pointer;
     }
 
     .infoContainer {
@@ -87,4 +81,47 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 1192px) {
+}
+
+@media screen and (max-width: 992px) {
+  .Container {
+    overflow: hidden;
+    justify-content: center;
+    .Result {
+      width: 95%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .Container {
+    .Result {
+      flex-direction: column;
+      height: 100%;
+
+      .img {
+        width: 100%;
+        pointer-events: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 400px) {
+}
+
+@media screen and (max-width: 1025px) and (min-aspect-ratio: 4/3) {
+  //IPAD
+}
+
+@media screen and (max-width: 1023px) and (min-aspect-ratio: 4/3) {
+}
+
+@media screen and (max-width: 700px) and (min-aspect-ratio: 4/3) {
 }

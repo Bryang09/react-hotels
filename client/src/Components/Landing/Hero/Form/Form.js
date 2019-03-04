@@ -34,13 +34,6 @@ const Form = props => {
     );
   });
 
-  // console.log(cityOptions);
-  // console.log(cityValues);
-  // console.log(roomValues);
-
-  // console.log(roomOptions);
-  console.log(disable);
-
   return (
     <div className="Form">
       <h1>Find the Perfect Hotel Today!</h1>
